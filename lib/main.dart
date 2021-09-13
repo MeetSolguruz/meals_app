@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './categories_screen.dart';
 
 void main(List<String> args) {
   runApp(MealsApp());
@@ -9,30 +10,25 @@ class MealsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      //title: 'Daily Meal',
+      title: 'Daily Meal',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
+        accentColor: Colors.black,
+        canvasColor: Color.fromRGBO(255, 254, 229, 1),
+        fontFamily: 'Raleway',
+        textTheme: ThemeData.light().textTheme.copyWith(
+              bodyText1: TextStyle(
+                color: Color.fromRGBO(20, 51, 51, 1),
+              ),
+              bodyText2: TextStyle(
+                color: Color.fromRGBO(20, 51, 51, 1),
+                fontSize: 24,
+                fontFamily: 'RobotoCondensed',
+                fontWeight: FontWeight.bold,
+              ),
+            ),
       ),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Daily Meals'),
-      ),
-      body: Center(
-        child: Text('Navigation Theme !'),
-      ),
+      home: CategoriesScreen(),
     );
   }
 }
