@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import './categories_screen.dart';
+import 'package:meals_app/screens/meal_detail_screen.dart';
+
+import './screens/category_meals_screen.dart';
+import './screens/categories_screen.dart';
 
 void main(List<String> args) {
   runApp(MealsApp());
 }
 
+//hello
 class MealsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,14 +17,17 @@ class MealsApp extends StatelessWidget {
       title: 'Daily Meal',
       theme: ThemeData(
         primarySwatch: Colors.pink,
-        accentColor: Colors.black,
-        canvasColor: Color.fromRGBO(255, 254, 229, 1),
+        accentColor: Colors.pinkAccent,
+        canvasColor: Color.fromRGBO(255, 254, 245, 1),
+        //canvasColor: Colors.white,
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
               bodyText1: TextStyle(
+                //Main Title Color of category item
                 color: Color.fromRGBO(20, 51, 51, 1),
               ),
               bodyText2: TextStyle(
+                //Inside the category item name color
                 color: Color.fromRGBO(20, 51, 51, 1),
                 fontSize: 24,
                 fontFamily: 'RobotoCondensed',
@@ -28,7 +35,12 @@ class MealsApp extends StatelessWidget {
               ),
             ),
       ),
-      home: CategoriesScreen(),
+      //home: CategoriesScreen(), we can use this here down as follow
+      routes: {
+        '/': (context) => CategoriesScreen(),
+        CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(),
+        MealDetailScreen.routeName: (context) => MealDetailScreen(),
+      },
     );
   }
 }
