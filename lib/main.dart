@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/screens/meal_detail_screen.dart';
+
+import './screens/filters_screen.dart';
+import './screens/meal_detail_screen.dart';
+import './screens/tabs_screen.dart';
 
 import './screens/category_meals_screen.dart';
 import './screens/categories_screen.dart';
@@ -17,7 +20,7 @@ class MealsApp extends StatelessWidget {
       title: 'Daily Meal',
       theme: ThemeData(
         primarySwatch: Colors.pink,
-        accentColor: Colors.pinkAccent,
+        accentColor: Colors.black,
         canvasColor: Color.fromRGBO(255, 254, 245, 1),
         //canvasColor: Colors.white,
         fontFamily: 'Raleway',
@@ -37,9 +40,17 @@ class MealsApp extends StatelessWidget {
       ),
       //home: CategoriesScreen(), we can use this here down as follow
       routes: {
-        '/': (context) => CategoriesScreen(),
+        '/': (context) => TabsScreen(),
         CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (context) => MealDetailScreen(),
+        FiltersScreen.routeName: (context) => FiltersScreen(),
+      },
+      onGenerateRoute: (settings) {
+        // print(settings.arguments);
+        // return MaterialPageRoute(builder: (context) => CategoriesScreen());
+      },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (context) => CategoriesScreen());
       },
     );
   }
