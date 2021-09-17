@@ -91,6 +91,8 @@ class _MealsAppState extends State<MealsApp> {
               bodyText2: TextStyle(
                 //Inside the category item name color
                 color: Color.fromRGBO(20, 51, 51, 1),
+              ),
+              headline6: TextStyle(
                 fontSize: 24,
                 fontFamily: 'RobotoCondensed',
                 fontWeight: FontWeight.bold,
