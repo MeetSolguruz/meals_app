@@ -57,13 +57,13 @@ class _TabsScreenState extends State<TabsScreen> {
         items: [
           BottomNavigationBarItem(
             //backgroundColor: Theme.of(context).primaryColor,
-            // unlock this when you unlock @type
+            // unlock this when you unlock @type shifting.
             icon: Icon(Icons.category),
             label: 'Categories',
           ),
           BottomNavigationBarItem(
             //backgroundColor: Theme.of(context).primaryColor,
-            // unlock this when you unlock @type
+            // unlock this when you unlock @type shifting.
             icon: Icon(Icons.star),
             label: 'Favourite',
           ),
