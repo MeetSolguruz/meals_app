@@ -26,7 +26,11 @@ class MealItem extends StatelessWidget {
       context,
       MealDetailScreen.routeName,
       arguments: id,
-    );
+    ).then((result) {
+      if (result != null) {
+        // removeItem(result);
+      }
+    });
   }
 
   @override
