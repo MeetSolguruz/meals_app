@@ -37,19 +37,25 @@ class _TabsScreenState extends State<TabsScreen> {
     });
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_pages![_selectedPageIndex]['title'] as String),
+  Widget _createBottomNavigationBar() {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.blueAccent, Colors.green],
+          begin: Alignment.topLeft,
+          end: Alignment.topRight,
+          // stops: [0.0, 0.8],
+          //tileMode: TileMode.clamp,
+        ),
       ),
-      drawer: MainDrawer(),
-      body: _pages![_selectedPageIndex]['page'] as Widget,
-      bottomNavigationBar: BottomNavigationBar(
+      child: BottomNavigationBar(
         onTap: _selectPage,
-        backgroundColor: Theme.of(context).primaryColor,
-        selectedItemColor: Theme.of(context).canvasColor,
-        // unselectedItemColor: Theme.of(context).canvasColor,
+        // check till down....
+        backgroundColor: Colors.transparent,
+        type: BottomNavigationBarType.fixed,
+        elevation: 0,
+        // unselectedItemColor: Colors.white,
+        selectedIconTheme: IconThemeData(color: Colors.white),
         currentIndex: _selectedPageIndex,
         //current-index is used for j select karie e highlight thaay...
         // type: BottomNavigationBarType.shifting,
@@ -71,4 +77,34 @@ class _TabsScreenState extends State<TabsScreen> {
       ),
     );
   }
+
+  //
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(_pages![_selectedPageIndex]['title'] as String),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.green, Colors.blueAccent],
+            ),
+          ),
+        ),
+      ),
+      drawer: MainDrawer(),
+      body: _pages![_selectedPageIndex]['page'] as Widget,
+      bottomNavigationBar: _createBottomNavigationBar(),
+    );
+  }
 }
+
+
+
+        // Hello Here,(check till down is here...)
+        // Also we can use this.
+        // backgroundColor: Theme.of(context).primaryColor,
+        //backgroundColor: Colors.blueAccent,
+        // selectedItemColor: Theme.of(context).canvasColor,
+        //selectedItemColor: Colors.red,
+        // unselectedItemColor: Theme.of(context).canvasColor, 

@@ -14,7 +14,10 @@ class FavouritesScreen extends StatelessWidget {
       return Center(
         child: Text(
           'You have no favourite yet: start adding some!',
-          style: TextStyle(fontSize: 22),
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       );
     } else {

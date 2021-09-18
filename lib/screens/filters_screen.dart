@@ -55,6 +55,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 'vegetarian': _vegetarian,
               };
               widget.saveFilters(selectedFilters);
+              Navigator.pushNamed(context, '/');
             },
           ),
         ],
@@ -66,6 +67,10 @@ class _FiltersScreenState extends State<FiltersScreen> {
             padding: EdgeInsets.all(20),
             child: Text(
               'Adjust your meal selection.',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
             ),
           ),
           Expanded(

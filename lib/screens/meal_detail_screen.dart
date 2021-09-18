@@ -72,8 +72,16 @@ class MealDetailScreen extends StatelessWidget {
               ListView.builder(
                 itemBuilder: (context, index) => Card(
                   //color: Theme.of(context).accentColor,
+                  // elevation: 5,
                   color: Colors.white30,
-                  child: Text(selectedMeal.ingredients[index]),
+
+                  child: Text(
+                    selectedMeal.ingredients[index],
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
                 ),
                 itemCount: selectedMeal.ingredients.length,
               ),
@@ -91,7 +99,10 @@ class MealDetailScreen extends StatelessWidget {
                         selectedMeal.steps[index],
                       ),
                     ),
-                    Divider(),
+                    Divider(
+                      thickness: 1,
+                      color: Theme.of(context).primaryColor,
+                    ),
                   ],
                 ),
                 itemCount: selectedMeal.steps.length,

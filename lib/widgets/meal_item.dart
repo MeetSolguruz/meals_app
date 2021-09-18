@@ -57,11 +57,14 @@ class MealItem extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: 20,
+                  bottom: 10,
                   left: 50,
                   child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.black54,
+                    ),
                     width: 300,
-                    color: Colors.black54,
                     padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
                     child: Text(
                       title,
@@ -81,17 +84,29 @@ class MealItem extends StatelessWidget {
                   Row(children: <Widget>[
                     Icon(Icons.schedule),
                     SizedBox(width: 6),
-                    Text('$duration min'),
+                    Text(
+                      '$duration min',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
                   ]),
                   Row(children: <Widget>[
                     Icon(Icons.work),
                     SizedBox(width: 4),
-                    Text(describeEnum(complexity)),
+                    Text(
+                      describeEnum(complexity),
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
                   ]),
                   Row(children: <Widget>[
                     Icon(Icons.attach_money),
                     SizedBox(width: 1),
-                    Text(describeEnum(affordability)),
+                    Text(
+                      describeEnum(affordability),
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
                   ]),
                 ],
               ),
